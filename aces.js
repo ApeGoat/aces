@@ -10,13 +10,14 @@ function hideAllCards() {
   // Function to show a random card
 function showRandomCard() {
   hideAllCards();
-  const randomIndex = Math.floor(Math.random() * cards.length);
+  //const randomIndex = Math.floor(Math.random() * cards.length);
+  const randomIndex = 2;
   cards[randomIndex].style.display = 'flex';
   if (randomIndex == 1){
     const whale = document.getElementById('whale');
-    gsap.to(whale, { y: '200vh', duration: 1.5, ease: 'power1.inOut', delay: 1.8 });   
+    gsap.to(whale, { y: '280vh', duration: 2, ease: 'power1.inOut', delay: 1.8 });   
     gsap.to(whale, { opacity: 1, delay: 1.8 });    
- 
+    gsap.set(whale, { y: '-280vh', opacity:0, delay: 3.8 });
   }
 }
 
