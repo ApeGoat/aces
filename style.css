@@ -1,0 +1,119 @@
+body {
+  background-color: rgb(27, 27, 27);
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: "Prosto One", sans-serif;
+}
+
+.header {
+  width: 100%;
+  /*color: rgb(41, 173, 255); /* Color when highlighted by the cursor area */
+  color: rgb(27, 27, 27); /* Color when highlighted by the cursor area */
+  margin: auto;
+  position: fixed;
+  bottom: 7vh;
+  height: 15vh;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  margin: 10px;
+  transition: background-color 0.3s;
+}
+
+#dd{
+  color: rgb(27, 27, 27);
+  background-color: rgb(27, 27, 27); /* Color when highlighted by the cursor area */
+  border: none;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-family: "Prosto One";
+  text-emphasis: bold;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+#dd:hover {
+  background-color: rgb(41, 173, 255);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Active effect for #dd button */
+#dd:active {
+  background-color: rgb(41, 173, 255);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transform: translateY(0);
+}
+
+.turn {
+  position: relative;
+  width: 100%;
+  height: 100vh; 
+}
+
+.cards {
+  color: rgb(41, 173, 255);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#win {
+  position: relative;
+}
+
+#win img{
+  position: absolute;
+  bottom: 150vh;
+  opacity: 0;
+}
+
+
+#bet{
+  color: rgb(27, 27, 27);
+  background-color: rgb(41, 173, 255);
+  border: none;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-family: "Prosto One";
+  text-emphasis: bold;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+  position: absolute;
+  bottom: 15vh;
+  left: calc(50% - 50px); /* Assuming the button width is 100px */
+  display: grid;
+  place-items: center;
+  opacity: 0;
+}
+#bet:hover {
+  background-color: rgb(41, 173, 255);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Active effect for #dd button */
+#bet:active {
+  background-color: rgb(41, 173, 255);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transform: translateY(0);
+}
+
+.cursor-area {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: rgb(182, 186, 188);
+  border-radius: 50%;
+  pointer-events: none;
+}
