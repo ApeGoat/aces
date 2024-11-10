@@ -58,12 +58,31 @@ body {
   height: 100vh; 
 }
 
-.turn p {
-  display: block; /* Ensure p elements are block elements */
-}
 
 .cards {
   color: rgb(41, 173, 255);
+}
+
+#end {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Add this line to stack elements vertically */
+}
+
+.star {
+  position: absolute;
+  left: 20vh;
+  bottom:75vh;
+  opacity: 0;
+}
+
+.meteor {
+  position: absolute;
+  width: 10%;
+  left: 20vh;
+  bottom: 75vh;
+  opacity: 1;
 }
 
 #whale{

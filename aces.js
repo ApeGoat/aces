@@ -10,20 +10,45 @@ function hideAllCards() {
   // Function to show a random card
 function showRandomCard() {
   hideAllCards();
-  const randomIndex = Math.floor(Math.random() * cards.length);
-  //const randomIndex = 2;
+  //const randomIndex = Math.floor(Math.random() * cards.length);
+  const randomIndex = 2;
   cards[randomIndex].style.display = 'flex';
   switch (randomIndex){
     case 0:
       break;
     case 1:
+      // Animate the whale falling
       const whale = document.getElementById('whale');
       gsap.to(whale, { y: '280vh', duration: 2, ease: 'power1.inOut', delay: 1.8 });   
       gsap.to(whale, { opacity: 1, delay: 1.8 });    
       gsap.set(whale, { y: '-280vh', opacity:0, delay: 3.8 });
       break;
     case 2:
-      break;
+      // Animate the precursor star(s)
+      const star = document.getElementsByClassName('star');
+      gsap.fromTo(star, 
+        { scale: 0}, 
+        { scale: 1, duration: 1, delay: 1.8 }
+      );
+      gsap.to(star, { opacity: 1, delay: 1.8 });   
+      gsap.fromTo(star,
+        { rotation: -60},
+        { rotation: 120, duration: 2 , delay: 1.8 }
+      );
+      gsap.to(star, { scale: 0, duration: 1, delay: 2.8 });   
+      
+      // Animate the first meteor
+      const meteor = document.getElementsByClassName('meteor');
+      gsap.fromTo(meteor, 
+        { scale: 0 }, 
+        { scale: 20, duration: 2, delay: 3.8, ease: 'power2.in' }
+      );
+      gsap.to(meteor, { x: '160vw', y: '160vw', duration: 2, delay: 3.8, ease: 'power1.inOut' }
+      );
+      gsap.to(meteor, { opacity: 1, delay: 3.8 });   
+      gsap.to(meteor, { x: '-160vw', y: '-160vw', opacity: 0, scale: 0, delay: 5.8 }
+      );
+
     default:
       break;
     }
