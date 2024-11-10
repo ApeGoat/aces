@@ -10,8 +10,8 @@ function hideAllCards() {
   // Function to show a random card
 function showRandomCard() {
   hideAllCards();
-  //const randomIndex = Math.floor(Math.random() * cards.length);
-  const randomIndex = 2;
+  const randomIndex = Math.floor(Math.random() * cards.length);
+  //const randomIndex = 2;
   cards[randomIndex].style.display = 'flex';
   switch (randomIndex){
     case 0:
@@ -39,16 +39,11 @@ function showRandomCard() {
       
       // Animate the first meteor
       const meteor = document.getElementsByClassName('meteor');
-      gsap.fromTo(meteor, 
-        { scale: 0 }, 
-        { scale: 20, duration: 2, delay: 3.8, ease: 'power2.in' }
-      );
-      gsap.to(meteor, { x: '160vw', y: '160vw', duration: 2, delay: 3.8, ease: 'power1.inOut' }
-      );
-      gsap.to(meteor, { opacity: 1, delay: 3.8 });   
-      gsap.to(meteor, { x: '-160vw', y: '-160vw', opacity: 0, scale: 0, delay: 5.8 }
-      );
-
+      gsap.set(meteor, { scale: 0, opacity: 1 }); 
+      gsap.to(meteor, { scale: 10, duration: 2, delay: 3.8, ease: 'power2.in' });
+      gsap.to(meteor, { x: '100vw', y: '100vw', duration: 2, delay: 3.8, ease: 'power1.inOut' });
+      gsap.set(meteor, { x: 0, y: 0, scale: 1, opacity: 0, delay: 5.8 }); // Reset position and scale
+      break;
     default:
       break;
     }

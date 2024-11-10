@@ -64,6 +64,8 @@ body {
 }
 
 #end {
+  height:  100%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -80,9 +82,9 @@ body {
 .meteor {
   position: absolute;
   width: 10%;
-  left: 20vh;
-  bottom: 75vh;
-  opacity: 1;
+  left: 12.4vh;
+  bottom: 73.3vh;
+  opacity: 0;
 }
 
 #whale{
