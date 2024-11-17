@@ -24,15 +24,15 @@ body {
 
 #neon {
   position: absolute;
-  left: 35vh;
-  bottom: 35vh;
+  left: 35%;
+  bottom: 200%;
   width: 30%;
   opacity: 0;
 }
 
 #lightswitch {
   position: absolute;
-  left: 70vh;
+  left: 70%;
   bottom: 35vh;
   width: 30%;
 }
