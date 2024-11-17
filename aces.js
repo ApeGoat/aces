@@ -40,8 +40,8 @@ function showRandomCard() {
       // Animate the first meteor
       const meteor = document.getElementsByClassName('meteor');
       gsap.set(meteor, { scale: 0, opacity: 1 }); 
-      gsap.to(meteor, { scale: 10, duration: 2, delay: 3.8, ease: 'power2.in' });
-      gsap.to(meteor, { x: '100vw', y: '100vw', duration: 2, delay: 3.8, ease: 'power1.inOut' });
+      gsap.to(meteor, { scale: 9, duration: 2, delay: 3.8, ease: 'power2.in' });
+      gsap.to(meteor, { x: '120vw', y: '120vw', duration: 2, delay: 3.8, ease: 'power1.inOut' });
       gsap.set(meteor, { x: 0, y: 0, scale: 1, opacity: 0, delay: 5.8 }); // Reset position and scale
       break;
     default:
@@ -155,4 +155,19 @@ document.addEventListener('mousemove', checkOverlap);
 
 // Add mousemove event listener to the document
 document.addEventListener('mousemove', updateCursorPosition);
+
+const lightSwitch = document.getElementById('lightswitch');
+const neon = document.getElementById('neon');
+
+lightSwitch.addEventListener('click', () => {
+  if (lightSwitch.classList.contains('active')) {
+    gsap.to(neon, { opacity: 0, duration: 1 });
+    gsap.set(lightSwitch, { rotationX: 0, y: 0 });
+    lightSwitch.classList.remove('active');
+  } else {
+    lightSwitch.classList.add('active');
+    gsap.to(neon, { opacity: 1, duration: 1 });
+    gsap.set(lightSwitch, { rotationX: 180, y: -8 });
+  }
+  });
 
