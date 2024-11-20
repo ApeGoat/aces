@@ -137,7 +137,7 @@ function checkOverlap() {
   const dd = document.getElementById('dd');
 
   elementsToCheck.forEach(element => {
-    if (isOverlapping(cursorArea, element)) {
+    if (isOverlapping(cursorArea, element) && window.getComputedStyle(element).color != 'rgb(118, 122, 124)') {
       gsap.to(element, { color: 'rgb(41, 173, 255)', duration: 0.1, ease: 'power1.inOut'});
     }
     else if (window.getComputedStyle(element).color === 'rgb(41, 173, 255)'){
