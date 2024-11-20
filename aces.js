@@ -182,7 +182,7 @@ document.addEventListener('mousemove', (event) => {
   checkOverlap();
 });
 document.addEventListener('touchmove', (event) => {
-  updateCursorPosition(event.touches[-1]);
+  updateCursorPosition(event.touches[0]);
   checkOverlap();
 });
  const hammer = new Hammer(document);
