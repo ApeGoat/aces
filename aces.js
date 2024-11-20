@@ -152,7 +152,12 @@ function checkOverlap() {
 splitAllText();
 // Add mousemove event listener to the document to check for overlap
 document.addEventListener('mousemove', checkOverlap);
-
+// Add touchmove event listener to the document to check for overlap
+document.addEventListener('touchmove', (event) => {
+  const touch = event.touches[0];
+  updateCursorPosition(touch);
+  checkOverlap();
+});
 // Add mousemove event listener to the document
 document.addEventListener('mousemove', updateCursorPosition);
 
