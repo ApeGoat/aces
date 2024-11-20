@@ -113,7 +113,11 @@ function updateCursorPosition(event) {
   const { clientX: x, clientY: y } = event;
   gsap.to(cursorArea, { x: x - cursorArea.offsetWidth / 2, y: y - cursorArea.offsetHeight / 2, duration: 0.2 });
 }
-
+// Function to update the position of the cursor-area using Hammer.js
+function updateCursorPositionHammer(event) {
+  const { center: { x, y } } = event;
+  gsap.to(cursorArea, { x: x - cursorArea.offsetWidth / 2, y: y - cursorArea.offsetHeight / 2, duration: 0.2 });
+}
 // Function to check if two elements are overlapping
 function isOverlapping(element1, element2) {
   const rect1 = element1.getBoundingClientRect();
@@ -149,15 +153,6 @@ function checkOverlap() {
   }
 }
 
-splitAllText();
-// Add mousemove event listener to the document to check for overlap
-document.addEventListener('mousemove', (event) => {
-  updateCursorPosition(event);
-  checkOverlap();
-});
-
-
-
 const lightSwitch = document.getElementById('lightswitch');
 const neon = document.getElementById('neon');
 
@@ -173,13 +168,17 @@ lightSwitch.addEventListener('click', () => {
   }
   });
 
- const hammer = new Hammer(document);
-// Add pan event listener to update cursor position and check for overlap
-hammer.on('pan', (event) => {
+
+splitAllText();
+// Add mousemove event listener to the document to check for overlap
+document.addEventListener('mousemove', (event) => {
   updateCursorPosition(event);
   checkOverlap();
 });
-hammer.on('swipe', (event) => {
-  updateCursorPosition(event);
+
+ const hammer = new Hammer(document);
+// Add pan event listener to update cursor position and check for overlap
+hammer.on('pan', (event) => {
+  updateCursorPositionHammer(event);
   checkOverlap();
 });
