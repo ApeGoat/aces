@@ -177,7 +177,10 @@ document.addEventListener('mousemove', (event) => {
   updateCursorPosition(event);
   checkOverlap();
 });
-
+document.addEventListener('touchmove', (event) => {
+  updateCursorPosition(event.touches[0]);
+  checkOverlap();
+});
  const hammer = new Hammer(document);
  hammer.set({ domEvents: true});
 // Add pan event listener to update cursor position and check for overlap
