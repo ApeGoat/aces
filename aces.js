@@ -118,10 +118,10 @@ function updateCursorPosition(event) {
     x = event.clientX;
     y = event.clientY;
   }
-  else if (event.type === 'pan') {
-    x = event.center.x;
-    y = event.center.y;
-  }
+//  else if (event.type === 'pan') {
+//    x = event.center.x;
+//    y = event.center.y;
+//  }
   gsap.to(cursorArea, { x: x - cursorArea.offsetWidth / 2, y: y - cursorArea.offsetHeight / 2, duration: 0.1 });
 }
 // Function to check if two elements are overlapping
@@ -188,7 +188,7 @@ document.addEventListener('touchmove', (event) => {
  const hammer = new Hammer(document);
  hammer.set({ domEvents: true});
 // Add pan event listener to update cursor position and check for overlap
-hammer.on('pan', (event) => {
-  updateCursorPosition(event);
-  checkOverlap();
-});
+//hammer.on('pan', (event) => {
+//  updateCursorPosition(event);
+//  checkOverlap();
+//});
