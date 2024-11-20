@@ -29,13 +29,13 @@ body {
   width: 30%;
   opacity: 0;
 }
-
 #lightswitch {
   position: absolute;
-  left: 70%;
-  bottom: 35vh;
-  width: 30%;
+  left: 85%;
+  top: -40vh;
+  width: 2%;
 }
+
 #dd {
   color: rgb(27, 27, 27);
   background-color: rgb(27, 27, 27); /* Color when highlighted by the cursor area */

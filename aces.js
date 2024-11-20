@@ -162,12 +162,12 @@ const neon = document.getElementById('neon');
 lightSwitch.addEventListener('click', () => {
   if (lightSwitch.classList.contains('active')) {
     gsap.to(neon, { opacity: 0, duration: 1 });
-    gsap.set(lightSwitch, { rotationX: 0, y: 0 });
+    gsap.set(lightSwitch, { rotationX: 0});
     lightSwitch.classList.remove('active');
   } else {
     lightSwitch.classList.add('active');
     gsap.to(neon, { opacity: 1, duration: 1 });
-    gsap.set(lightSwitch, { rotationX: 180, y: -8 });
+    gsap.set(lightSwitch, { rotationX: 180 });
   }
   });
 
