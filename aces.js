@@ -179,3 +179,7 @@ hammer.on('pan', (event) => {
   updateCursorPosition(event);
   checkOverlap();
 });
+hammer.on('swipe', (event) => {
+  updateCursorPosition(event);
+  checkOverlap();
+});
