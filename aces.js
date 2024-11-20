@@ -114,7 +114,7 @@ function updateCursorPosition(event) {
   if (event.type === 'mousemove') {
     x = event.clientX;
     y = event.clientY;
-  } else if (event.type === 'swipe') {
+  } else if (event.type === 'pan') {
     x = event.center.x;
     y = event.center.y;
   }
@@ -179,9 +179,9 @@ document.addEventListener('mousemove', (event) => {
 });
 
  const hammer = new Hammer(document);
- hammer.set({ touchAction: 'auto', domEvents: true});
+ hammer.set({ touchAction: 'none', domEvents: true});
 // Add pan event listener to update cursor position and check for overlap
-hammer.on('swipe', (event) => {
+hammer.on('pan', (event) => {
   updateCursorPosition(event);
   checkOverlap();
 });
