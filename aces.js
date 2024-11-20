@@ -151,15 +151,12 @@ function checkOverlap() {
 
 splitAllText();
 // Add mousemove event listener to the document to check for overlap
-document.addEventListener('mousemove', checkOverlap);
-// Add touchmove event listener to the document to check for overlap
-document.addEventListener('touchmove', (event) => {
-  const touch = event.touches[0];
-  updateCursorPosition(touch);
+document.addEventListener('mousemove', (event) => {
+  updateCursorPosition(event);
   checkOverlap();
 });
-// Add mousemove event listener to the document
-document.addEventListener('mousemove', updateCursorPosition);
+
+
 
 const lightSwitch = document.getElementById('lightswitch');
 const neon = document.getElementById('neon');
@@ -176,3 +173,9 @@ lightSwitch.addEventListener('click', () => {
   }
   });
 
+ const hammer = new Hammer(document);
+// Add pan event listener to update cursor position and check for overlap
+hammer.on('pan', (event) => {
+  updateCursorPosition(event);
+  checkOverlap();
+});
