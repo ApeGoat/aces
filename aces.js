@@ -179,6 +179,7 @@ document.addEventListener('mousemove', (event) => {
 });
 
  const hammer = new Hammer(document);
+ hammer.set({ touchAction: 'auto', domEvents: true});
 // Add pan event listener to update cursor position and check for overlap
 hammer.on('swipe', (event) => {
   updateCursorPosition(event);
