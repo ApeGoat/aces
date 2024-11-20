@@ -114,7 +114,11 @@ function updateCursorPosition(event) {
   if (event.type === 'mousemove') {
     x = event.clientX;
     y = event.clientY;
-  } else if (event.type === 'pan') {
+  } else if (event.type === 'touchmove') {
+    x = event.clientX;
+    y = event.clientY;
+  }
+  else if (event.type === 'pan') {
     x = event.center.x;
     y = event.center.y;
   }
