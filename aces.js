@@ -110,13 +110,15 @@ function splitAllText() {
 
 // Function to update the position of the cursor-area
 function updateCursorPosition(event) {
-  const { clientX: x, clientY: y } = event;
-  gsap.to(cursorArea, { x: x - cursorArea.offsetWidth / 2, y: y - cursorArea.offsetHeight / 2, duration: 0.2 });
-}
-// Function to update the position of the cursor-area using Hammer.js
-function updateCursorPositionHammer(event) {
-  const { center: { x, y } } = event;
-  gsap.to(cursorArea, { x: x - cursorArea.offsetWidth / 2, y: y - cursorArea.offsetHeight / 2, duration: 0.2 });
+  let x, y;
+  if (event.type === 'mousemove') {
+    x = event.clientX;
+    y = event.clientY;
+  } else if (event.type === 'pan') {
+    x = event.center.x;
+    y = event.center.y;
+  }
+  gsap.to(cursorArea, { x: x - cursorArea.offsetWidth / 2, y: y - cursorArea.offsetHeight / 2, duration: 0.1 });
 }
 // Function to check if two elements are overlapping
 function isOverlapping(element1, element2) {
@@ -179,6 +181,6 @@ document.addEventListener('mousemove', (event) => {
  const hammer = new Hammer(document);
 // Add pan event listener to update cursor position and check for overlap
 hammer.on('pan', (event) => {
-  updateCursorPositionHammer(event);
+  updateCursorPosition(event);
   checkOverlap();
 });
