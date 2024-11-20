@@ -115,8 +115,8 @@ function updateCursorPosition(event) {
     x = event.clientX;
     y = event.clientY;
   } else if (event.type === 'touchmove') {
-    x = event.touches[0].clientX;
-    y = event.touches[0].clientY;
+    x = event.clientX;
+    y = event.clientY;
   }
   else if (event.type === 'pan') {
     x = event.center.x;
@@ -182,7 +182,7 @@ document.addEventListener('mousemove', (event) => {
   checkOverlap();
 });
 document.addEventListener('touchmove', (event) => {
-  updateCursorPosition(event.touches[0]);
+  updateCursorPosition(event.touches[-1]);
   checkOverlap();
 });
  const hammer = new Hammer(document);
