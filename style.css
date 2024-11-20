@@ -1,3 +1,4 @@
+
 body {
   background-color: rgb(27, 27, 27);
   height: 100vh;
@@ -145,4 +146,36 @@ body {
   background-color: rgb(182, 186, 188);
   border-radius: 50%;
   pointer-events: none;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px; /* Adjust font size for mobile */
+  }
+
+  .header {
+    bottom: 5vh; /* Adjust position for mobile */
+    height: 20vh; /* Adjust height for mobile */
+  }
+
+  #dd {
+    padding: 10px 20px; /* Adjust padding for mobile */
+    font-size: 16px; /* Adjust font size for mobile */
+  }
+
+  #neon {
+    left: 20%; /* Adjust position for mobile */
+    width: 50%; /* Adjust width for mobile */
+  }
+
+  #lightswitch {
+    left: 80%; /* Adjust position for mobile */
+    top: -30vh; /* Adjust position for mobile */
+    width: 5%; /* Adjust width for mobile */
+  }
+
+  .turn {
+    flex-direction: column; /* Ensure elements stack vertically on mobile */
+  }
 }
